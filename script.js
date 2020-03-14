@@ -1,4 +1,5 @@
 var score = 0;
+var timeLeft;
 
 var cardQuestion = document.querySelector(".card-title");
 var answerCheck = document.querySelector(".card-footer");
@@ -195,19 +196,42 @@ function sixthCard() {
     answerCheck.style.visibility = "hidden";
 };
 
-function startTimer() {
-    var timeLeft = 75;
-  
-    var timeInterval = setInterval(function() {
-      timerElement.textContent = "Time: " + timeLeft;
-      timeLeft--;
-  
-      if (timeLeft === 0) {
-        clearInterval(timeInterval);
-        timerElement.textContent = "";
-        sixthCard();
-      }
-  
-    }, 1000);
-  }
-  startTimer();
+(function() {
+    timeLeft = 75;
+    function startTimer(){
+
+        var timer = setInterval(function(){
+            timeLeft--;
+            timerElement.innerHTML='Time: '+ timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                sixthCard();
+            }
+        }, 1000);
+    }
+    buttonOne.addEventListener('click', function() {
+        if(answerCheck.textContent === "Wrong!"){
+            timeLeft -= 10;
+            timerElement.innerHTML='Time: '+timeLeft;
+        }
+    });
+    buttonTwo.addEventListener('click', function() {
+        if(answerCheck.textContent === "Wrong!"){
+            timeLeft -= 10;
+            timerElement.innerHTML='Time: '+timeLeft;
+        }
+    });
+    buttonThree.addEventListener('click', function() {
+        if(answerCheck.textContent === "Wrong!"){
+            timeLeft -= 10;
+            timerElement.innerHTML='Time: '+timeLeft;
+        }
+    });
+    buttonFour.addEventListener('click', function() {
+        if(answerCheck.textContent === "Wrong!"){
+            timeLeft -= 10;
+            timerElement.innerHTML='Time: '+timeLeft;
+        }
+    });
+    startTimer();
+})();
