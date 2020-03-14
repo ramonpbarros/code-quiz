@@ -1,10 +1,12 @@
 var score = 0;
+
 var cardQuestion = document.querySelector(".card-title");
 var answerCheck = document.querySelector(".card-footer");
 var buttonOne = document.getElementById("button-index-0");
 var buttonTwo = document.getElementById("button-index-1");
 var buttonThree = document.getElementById("button-index-2");
 var buttonFour = document.getElementById("button-index-3");
+var timerElement = document.getElementById("timerText");
 
 answerCheck.style.visibility = "hidden";
 
@@ -193,3 +195,19 @@ function sixthCard() {
     answerCheck.style.visibility = "hidden";
 };
 
+function startTimer() {
+    var timeLeft = 75;
+  
+    var timeInterval = setInterval(function() {
+      timerElement.textContent = "Time: " + timeLeft;
+      timeLeft--;
+  
+      if (timeLeft === 0) {
+        clearInterval(timeInterval);
+        timerElement.textContent = "";
+        sixthCard();
+      }
+  
+    }, 1000);
+  }
+  startTimer();
