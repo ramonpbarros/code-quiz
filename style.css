@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    padding: 5em;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+#button-index-0 {
+    background-color:#2b7bff;
+    color: #f8f9fa;
+}
+
+
