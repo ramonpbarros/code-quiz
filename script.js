@@ -2,6 +2,8 @@ var score = 0;
 
 var cardQuestion = document.querySelector(".card-title");
 var answerCheck = document.querySelector(".card-footer");
+var card = document.querySelector(".testCard");
+
 var buttonOne = document.getElementById("button-index-0");
 var buttonTwo = document.getElementById("button-index-1");
 var buttonThree = document.getElementById("button-index-2");
@@ -9,9 +11,12 @@ var buttonFour = document.getElementById("button-index-3");
 var timerElement = document.getElementById("timerText");
 var resultText = document.getElementById("cardResult");
 var resultForm = document.getElementById("form");
+var buttonSubmit = document.getElementById("btnSubmit");
+var highscoreList = document.querySelector(".list");
 
-resultForm.style.visibility = "hidden";
-answerCheck.style.visibility = "hidden";
+// highscoreList.style.display = "none";
+answerCheck.style.display = "none";
+resultForm.style.display = "none";
 
 
 var questions = [
@@ -33,27 +38,27 @@ buttonOne.addEventListener("click", function (e) {
     e.preventDefault();
     if (buttonOne.textContent === "strings") {
         score-=5;
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         answerCheck.textContent = "Wrong!"
         secondCard();
     } else if (buttonOne.textContent === "curly brackets") {
         score-=5;
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         answerCheck.textContent = "Wrong!"
         thirdCard();
     } else if (buttonOne.textContent === "numbers and strings") {
         score-=5;
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         answerCheck.textContent = "Wrong!"
         fourthCard();
     } else if (buttonOne.textContent === "commas") {
         score-=5;
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         answerCheck.textContent = "Wrong!"
         fifthCard();
     } else {
         score-=5;
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         answerCheck.textContent = "Wrong!"
         sixthCard();
     }
@@ -63,27 +68,27 @@ buttonTwo.addEventListener("click", function (e) {
     e.preventDefault();
     if (buttonTwo.textContent === "booleans") {
         score-=5;
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         answerCheck.textContent = "Wrong!"
         secondCard();
     } else if (buttonTwo.textContent === "quotes") {
         score-=5;
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         answerCheck.textContent = "Wrong!"
         thirdCard();
     } else if (buttonTwo.textContent === "other arrays") {
         score-=5;
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         answerCheck.textContent = "Wrong!"
         fourthCard();
     } else if (buttonTwo.textContent === "curly brackets") {
         score-=5;
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         answerCheck.textContent = "Wrong!"
         fifthCard();
     } else {
         score-=5;
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         answerCheck.textContent = "Wrong!"
         sixthCard();
     }
@@ -94,12 +99,12 @@ buttonThree.addEventListener("click", function (e) {
     if (buttonThree.textContent === "alerts") {
         score+=20;
         answerCheck.textContent = "Correct!"
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         secondCard();
     } else if (buttonThree.textContent === "parentheses") {
         score+=20;
         answerCheck.textContent = "Correct!"
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         thirdCard();
     } else if (buttonThree.textContent === "booleans") {
         score-=5;
@@ -109,12 +114,12 @@ buttonThree.addEventListener("click", function (e) {
     } else if (buttonThree.textContent === "quotes") {
         score+=20;
         answerCheck.textContent = "Correct!"
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         fifthCard();
     } else if (buttonThree.textContent === "for loops") {
         score-=5;
         answerCheck.textContent = "Wrong!"
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         sixthCard();
     }
 });
@@ -123,31 +128,41 @@ buttonFour.addEventListener("click", function (e) {
     e.preventDefault();
     if (buttonFour.textContent === "numbers") {
         score-=5;
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         answerCheck.textContent = "Wrong!"
         secondCard();
     } else if (buttonFour.textContent === "square brackets") {
         score-=5;
         answerCheck.textContent = "Wrong!"
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         thirdCard();
     } else if (buttonFour.textContent === "all of the above") {
         score+=20;
         answerCheck.textContent = "Correct!"
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         fourthCard();
     } else if (buttonFour.textContent === "parentheses") {
         score-=5;
         answerCheck.textContent = "Wrong!"
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         fifthCard();
     } else if (buttonFour.textContent === "console log") {
         score+=20;
         answerCheck.textContent = "Correct!"
-        answerCheck.style.visibility = "visible";
+        answerCheck.style.display = "contents";
         sixthCard();
     }
 });
+
+// buttonSubmit.onclick = function() {
+//     card.style.display = "none"
+//     highscoreList.style.display = "contents";
+// }
+// buttonSubmit.addEventListener("click", function(e){
+//     e.preventDefault
+//     card.style.display = "none"
+//     highscoreList.style.display = "contents";
+// })
 
 function secondCard() {
     cardQuestion.textContent = JSON.stringify(questions[1].q);
@@ -191,14 +206,14 @@ function fifthCard() {
 
 function sixthCard() {
     cardQuestion.textContent = "All done!";
-    buttonOne.style.visibility = "hidden";
-    buttonTwo.style.visibility = "hidden";
-    buttonThree.style.visibility = "hidden";
-    buttonFour.style.visibility = "hidden";
-    answerCheck.style.visibility = "hidden";
+    buttonOne.style.display = "none";
+    buttonTwo.style.display = "none";
+    buttonThree.style.display = "none";
+    buttonFour.style.display = "none";
+    answerCheck.style.display = "none";
     resultText.innerHTML = "Your final score is " + score + ".";
-    resultForm.style.visibility = "visible";
-    timerElement.innerHTML = "Time: ";
+    resultForm.style.display = "contents"
+    timerElement.innerHTML = "Time: 0";
 };
 
 (function() {
@@ -241,4 +256,9 @@ function sixthCard() {
     });
     startTimer();
 })();
-console.log("score: " + score);
+
+
+var highscoreInitials = document.getElementById("inputInitials").value;
+// var highscoreScore = score;
+
+console.log(highscoreInitials);

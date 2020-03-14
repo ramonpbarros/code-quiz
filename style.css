@@ -18,3 +18,12 @@ body {
 .buttons {
     padding-top: 5px;
 }
+
+#highscoreLink {
+    color: #2b7bff;
+}
+
+#form {
+    display: inline-block;
+}
+
