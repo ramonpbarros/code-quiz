@@ -21,7 +21,8 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#" id="highscoreLink">View Highscore <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#" id="highscoreLink">View Highscore <span
+                                class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <span class="navbar-text" id="timerText">
@@ -33,8 +34,8 @@
 
     <div class="container">
 
-        <div class="card text-center">
-            <div class="card-body  testCard">
+        <div class="card text-center testCard">
+            <div class="card-body">
                 <h5 class="card-title">Coding Quiz Challenge</h5>
                 <p class="card-text" id="cardResult"></p>
                 <div class="buttons">
@@ -42,46 +43,48 @@
                     <button class="btn btn-primary" id="button-index-1">test</button>
                     <button class="btn btn-primary" id="button-index-2">test</button>
                     <button class="btn btn-primary" id="button-index-3">test</button>
+                    <!-- <a href="highscore.html" id="btnSubmit">Submit</a> -->
                 </div>
                 <form class="form-inline" id="form">
                     <div>
-                        <!-- <label for="staticEmail2" class="sr-only">Email</label>
-                        <input type="text" class="form-control-plaintext" id="staticEmail2" value="Enter initials: "> -->
-                        <p>Enter initials:</p>
+                        <label for="staticEmail2" class="sr-only">Email</label>
+                        <input type="text" class="form-control-plaintext" id="staticEmail2" value="Enter initials: ">
+                        <!-- <p>Enter initials:</p> -->
                     </div>
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="inputPassword2" class="sr-only">Password</label>
                         <input type="text" class="form-control" id="inputInitials" placeholder="">
                     </div>
-                    <a href="highscore.html" class="btn btn-primary">Submit</a>
-                    <!-- <button class="btn btn-primary" id="btnSubmit">Submit</button> -->
+                    <button id="btnSubmit">Submit</button>
                 </form>
             </div>
             <div class="card-footer text-muted">
                 Correct!
             </div>
-            <!-- Highscore list -->
-                <!-- <ul class="list-group list">
-                    <li class="list-group-item active h2">Highscore</li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center h6">
-                        RPB
-                        <span class="badge badge-primary badge-pill">100</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center h6">
-                        ABC
-                        <span class="badge badge-primary badge-pill">50</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center h6">
-                        MVP
-                        <span class="badge badge-primary badge-pill">25</span>
-                    </li>
-                    <div class="card-body">
-                        <a href="index.html" class="btn btn-primary">Go Back</a>
-                        <button class="btn btn-primary">Clear Highscore</button>
-                      </div>
-                </ul> -->
         </div>
+        <div>
 
+            <ul class="list-group list">
+                <li class="list-group-item active h2">Highscore</li>
+                <li class="list-group-item d-flex justify-content-between align-items-center h6">
+                    RPB
+                    <span class="badge badge-primary badge-pill">100</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center h6">
+                    ABC
+                    <span class="badge badge-primary badge-pill">50</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center h6">
+                    MVP
+                    <span class="badge badge-primary badge-pill">25</span>
+                </li>
+                <div>
+                    <a href="index.html" class="btn btn-primary">Go Back</a>
+                    <button class="btn btn-primary">Clear Highscore</button>
+                </div>
+            </ul>
+
+        </div>
 
     </div>
 

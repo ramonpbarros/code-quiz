@@ -18,9 +18,28 @@ body {
 .buttons {
     padding-top: 5px;
 }
+.btnSubmit {
+    width: 60px;
+    color: #2b7bff;
+    background-color: burlywood;
+}
+
 
 #highscoreLink {
     color: #2b7bff;
+}
+#highscoreLink:hover {
+    color: #2b7bff;
+    font-weight: bold;
+}
+ 
+#btnSubmit {
+    color: #2b7bff;
+}
+
+#btnSubmit:hover {
+    color: #2b7bff;
+    font-weight: bold;
 }
 
 #form {

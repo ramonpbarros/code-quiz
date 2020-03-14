@@ -12,9 +12,12 @@ var timerElement = document.getElementById("timerText");
 var resultText = document.getElementById("cardResult");
 var resultForm = document.getElementById("form");
 var buttonSubmit = document.getElementById("btnSubmit");
+
+var highscoreInitials = document.getElementById("inputInitials").value;
 var highscoreList = document.querySelector(".list");
 
-// highscoreList.style.display = "none";
+highscoreList.style.display = "none";
+buttonSubmit.style.display = "none";
 answerCheck.style.display = "none";
 resultForm.style.display = "none";
 
@@ -158,11 +161,19 @@ buttonFour.addEventListener("click", function (e) {
 //     card.style.display = "none"
 //     highscoreList.style.display = "contents";
 // }
-// buttonSubmit.addEventListener("click", function(e){
-//     e.preventDefault
-//     card.style.display = "none"
-//     highscoreList.style.display = "contents";
-// })
+buttonSubmit.addEventListener("click", function(e){
+    e.preventDefault();
+    // e.stopImmediatePropagation();
+    console.log("works");
+    if(highscoreInitials !== null){
+        highscoreCard();
+    }
+})
+
+function highscoreCard(){
+    card.style.display = "none"
+    highscoreList.style.display = "contents";
+}
 
 function secondCard() {
     cardQuestion.textContent = JSON.stringify(questions[1].q);
@@ -214,6 +225,10 @@ function sixthCard() {
     resultText.innerHTML = "Your final score is " + score + ".";
     resultForm.style.display = "contents"
     timerElement.innerHTML = "Time: 0";
+    buttonSubmit.style.display = "contents"
+
+    localStorage.setItem("score", JSON.stringify(score));
+    console.log(score);
 };
 
 (function() {
@@ -258,7 +273,6 @@ function sixthCard() {
 })();
 
 
-var highscoreInitials = document.getElementById("inputInitials").value;
 // var highscoreScore = score;
 
-console.log(highscoreInitials);
+// localStorage.setItem("highscoreInitials".JSON.stringify(highscoreInitials));
