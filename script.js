@@ -1,5 +1,4 @@
 var score = 0;
-var timeLeft;
 
 var cardQuestion = document.querySelector(".card-title");
 var answerCheck = document.querySelector(".card-footer");
@@ -8,7 +7,10 @@ var buttonTwo = document.getElementById("button-index-1");
 var buttonThree = document.getElementById("button-index-2");
 var buttonFour = document.getElementById("button-index-3");
 var timerElement = document.getElementById("timerText");
+var resultText = document.getElementById("cardResult");
+var resultForm = document.getElementById("form");
 
+resultForm.style.visibility = "hidden";
 answerCheck.style.visibility = "hidden";
 
 
@@ -30,27 +32,27 @@ if (cardQuestion.textContent = JSON.stringify(questions[0].q)) {
 buttonOne.addEventListener("click", function (e) {
     e.preventDefault();
     if (buttonOne.textContent === "strings") {
-        score--;
+        score-=5;
         answerCheck.style.visibility = "visible";
         answerCheck.textContent = "Wrong!"
         secondCard();
     } else if (buttonOne.textContent === "curly brackets") {
-        score--;
+        score-=5;
         answerCheck.style.visibility = "visible";
         answerCheck.textContent = "Wrong!"
         thirdCard();
     } else if (buttonOne.textContent === "numbers and strings") {
-        score--;
+        score-=5;
         answerCheck.style.visibility = "visible";
         answerCheck.textContent = "Wrong!"
         fourthCard();
     } else if (buttonOne.textContent === "commas") {
-        score--;
+        score-=5;
         answerCheck.style.visibility = "visible";
         answerCheck.textContent = "Wrong!"
         fifthCard();
     } else {
-        score--;
+        score-=5;
         answerCheck.style.visibility = "visible";
         answerCheck.textContent = "Wrong!"
         sixthCard();
@@ -60,27 +62,27 @@ buttonOne.addEventListener("click", function (e) {
 buttonTwo.addEventListener("click", function (e) {
     e.preventDefault();
     if (buttonTwo.textContent === "booleans") {
-        score--;
+        score-=5;
         answerCheck.style.visibility = "visible";
         answerCheck.textContent = "Wrong!"
         secondCard();
     } else if (buttonTwo.textContent === "quotes") {
-        score--;
+        score-=5;
         answerCheck.style.visibility = "visible";
         answerCheck.textContent = "Wrong!"
         thirdCard();
     } else if (buttonTwo.textContent === "other arrays") {
-        score--;
+        score-=5;
         answerCheck.style.visibility = "visible";
         answerCheck.textContent = "Wrong!"
         fourthCard();
     } else if (buttonTwo.textContent === "curly brackets") {
-        score--;
+        score-=5;
         answerCheck.style.visibility = "visible";
         answerCheck.textContent = "Wrong!"
         fifthCard();
     } else {
-        score--;
+        score-=5;
         answerCheck.style.visibility = "visible";
         answerCheck.textContent = "Wrong!"
         sixthCard();
@@ -90,27 +92,27 @@ buttonTwo.addEventListener("click", function (e) {
 buttonThree.addEventListener("click", function (e) {
     e.preventDefault();
     if (buttonThree.textContent === "alerts") {
-        score++;
+        score+=20;
         answerCheck.textContent = "Correct!"
         answerCheck.style.visibility = "visible";
         secondCard();
     } else if (buttonThree.textContent === "parentheses") {
-        score++;
+        score+=20;
         answerCheck.textContent = "Correct!"
         answerCheck.style.visibility = "visible";
         thirdCard();
     } else if (buttonThree.textContent === "booleans") {
-        score--;
+        score-=5;
         answerCheck.textContent = "Wrong!"
         answerCheck.style.visibility = "visible";
         fourthCard();
     } else if (buttonThree.textContent === "quotes") {
-        score++;
+        score+=20;
         answerCheck.textContent = "Correct!"
         answerCheck.style.visibility = "visible";
         fifthCard();
     } else if (buttonThree.textContent === "for loops") {
-        score--;
+        score-=5;
         answerCheck.textContent = "Wrong!"
         answerCheck.style.visibility = "visible";
         sixthCard();
@@ -120,27 +122,27 @@ buttonThree.addEventListener("click", function (e) {
 buttonFour.addEventListener("click", function (e) {
     e.preventDefault();
     if (buttonFour.textContent === "numbers") {
-        score--;
+        score-=5;
         answerCheck.style.visibility = "visible";
         answerCheck.textContent = "Wrong!"
         secondCard();
     } else if (buttonFour.textContent === "square brackets") {
-        score--;
+        score-=5;
         answerCheck.textContent = "Wrong!"
         answerCheck.style.visibility = "visible";
         thirdCard();
     } else if (buttonFour.textContent === "all of the above") {
-        score++;
+        score+=20;
         answerCheck.textContent = "Correct!"
         answerCheck.style.visibility = "visible";
         fourthCard();
     } else if (buttonFour.textContent === "parentheses") {
-        score--;
+        score-=5;
         answerCheck.textContent = "Wrong!"
         answerCheck.style.visibility = "visible";
         fifthCard();
     } else if (buttonFour.textContent === "console log") {
-        score++;
+        score+=20;
         answerCheck.textContent = "Correct!"
         answerCheck.style.visibility = "visible";
         sixthCard();
@@ -194,17 +196,21 @@ function sixthCard() {
     buttonThree.style.visibility = "hidden";
     buttonFour.style.visibility = "hidden";
     answerCheck.style.visibility = "hidden";
+    resultText.innerHTML = "Your final score is " + score + ".";
+    resultForm.style.visibility = "visible";
+    timerElement.innerHTML = "Time: ";
 };
 
 (function() {
-    timeLeft = 75;
+    var timeLeft = 75;
     function startTimer(){
 
         var timer = setInterval(function(){
             timeLeft--;
-            timerElement.innerHTML='Time: '+ timeLeft;
+            timerElement.innerHTML = "Time: " + timeLeft;
             if (timeLeft <= 0) {
                 clearInterval(timer);
+                timerElement.innerHTML = "Time: ";
                 sixthCard();
             }
         }, 1000);
@@ -212,26 +218,27 @@ function sixthCard() {
     buttonOne.addEventListener('click', function() {
         if(answerCheck.textContent === "Wrong!"){
             timeLeft -= 10;
-            timerElement.innerHTML='Time: '+timeLeft;
+            timerElement.innerHTML = "Time: " + timeLeft;
         }
     });
     buttonTwo.addEventListener('click', function() {
         if(answerCheck.textContent === "Wrong!"){
             timeLeft -= 10;
-            timerElement.innerHTML='Time: '+timeLeft;
+            timerElement.innerHTML = "Time: "+ timeLeft;
         }
     });
     buttonThree.addEventListener('click', function() {
         if(answerCheck.textContent === "Wrong!"){
             timeLeft -= 10;
-            timerElement.innerHTML='Time: '+timeLeft;
+            timerElement.innerHTML = "Time: "+ timeLeft;
         }
     });
     buttonFour.addEventListener('click', function() {
         if(answerCheck.textContent === "Wrong!"){
             timeLeft -= 10;
-            timerElement.innerHTML='Time: '+timeLeft;
+            timerElement.innerHTML = "Time: "+ timeLeft;
         }
     });
     startTimer();
 })();
+console.log("score: " + score);
