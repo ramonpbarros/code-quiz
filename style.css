@@ -15,9 +15,8 @@ body {
     flex-direction: row;
   }
 
-#button-index-0 {
-    background-color:#2b7bff;
-    color: #f8f9fa;
+.buttons {
+    padding-top: 5px;
 }
 
 
