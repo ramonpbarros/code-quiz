@@ -1,5 +1,5 @@
 # Code Quiz
-> Here goes your awesome project description!
+> This application is a timed code quiz with multiple-choice questions on Javascript fundamentals that stores high scores so that user can gauge his/her progress compared to others.
 
 ## Table of contents
 * [General info](#general-info)
@@ -12,38 +12,40 @@
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
+This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes. The motivation to build this app was to show logic skills, practing the use of functions, the use of timer, getting and setting information to local storage.
 
 ## Screenshots
 ![Example gif](./gif/code-quiz.gif)
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* JavaScript
+* HTML 5
+* CSS
+* Bootstrap 4
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+This application runs in the browser. Nothing needs to be installed except for your default browser.
+* Repository can be found here: [GitHub/ramonpbarros](https://github.com/ramonpbarros/code-quiz) Make sure to git clone repository and check out the code!
 
 ## Code Examples
 Show examples of usage:
-`put-your-code-here`
+`localStorage.setItem("initialsText", JSON.stringify(initialsText)); var test = JSON.parse(localStorage.getItem("initialsText"));`
 
 ## Features
 List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* Click the start button  and a timer starts!
+* Wrong answer will penalize user with 5 points and 10 seonds!
+* When game is over user can save his initials and score!
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Design needs improvement.
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+Project is: _in progress_
+* Make sure to check the application [here](https://ramonpbarros.github.io/code-quiz/)
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+Project inspired by UCSD Coding Bootcamp, based on third week of course, applying JavaScript, HTML and CSS skills.
 
 ## Contact
 Created by [@ramonpbarros](https://github.com/ramonpbarros) - feel free to contact me!
