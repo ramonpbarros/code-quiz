@@ -8,19 +8,16 @@ var buttonOne = document.getElementById("button-index-0");
 var buttonTwo = document.getElementById("button-index-1");
 var buttonThree = document.getElementById("button-index-2");
 var buttonFour = document.getElementById("button-index-3");
+var buttonSubmit = document.getElementById("btnSubmit");
+
 var timerElement = document.getElementById("timerText");
 var resultText = document.getElementById("cardResult");
 var resultForm = document.getElementById("form");
-var buttonSubmit = document.getElementById("btnSubmit");
 
 var highscoreInitials = document.getElementById("inputInitials");
 var highscoreList = document.querySelector(".list");
 var highscoreTotalscore = document.getElementById("span-index-0");
 var highscoreInitialList0 = document.getElementById("li-index-0")
-var highscoreInitialList1 = document.getElementById("li-index-1")
-var highscoreInitialList2 = document.getElementById("li-index-2")
-var highscoreInitialList3 = document.getElementById("li-index-3")
-var highscoreInitialList4 = document.getElementById("li-index-4")
 var highscoreBtn = document.getElementById("highscoreButtons");
 
 highscoreBtn.style.display = "none";
@@ -185,14 +182,17 @@ buttonSubmit.addEventListener("click", function (e) {
     localStorage.setItem("initialsText", initialsText);
     var initials = localStorage.getItem("initialsText");
     var totalScore = JSON.parse(localStorage.getItem("score"));
+
     highscoreInitialList0.textContent = initials + ": " + totalScore + " points.";
+    localStorage.setItem("highscoreInitialList0", JSON.stringify(highscoreInitialList0.innerHTML));
+    var listItemOne = JSON.parse(localStorage.getItem("highscoreInitialList0"));
+
 })
 
 function highscoreCard() {
     card.style.display = "none"
     highscoreList.style.display = "contents";
     highscoreBtn.style.display = "contents";
-
 }
 
 function secondCard() {
