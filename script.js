@@ -9,6 +9,7 @@ var buttonTwo = document.getElementById("button-index-1");
 var buttonThree = document.getElementById("button-index-2");
 var buttonFour = document.getElementById("button-index-3");
 var buttonSubmit = document.getElementById("btnSubmit");
+var buttonClearHighscore = document.getElementById("buttonClear");
 
 var timerElement = document.getElementById("timerText");
 var resultText = document.getElementById("cardResult");
@@ -17,7 +18,7 @@ var resultForm = document.getElementById("form");
 var highscoreInitials = document.getElementById("inputInitials");
 var highscoreList = document.querySelector(".list");
 var highscoreTotalscore = document.getElementById("span-index-0");
-var highscoreInitialList0 = document.getElementById("li-index-0")
+var highscoreInitialList = document.getElementById("li-index-0")
 var highscoreBtn = document.getElementById("highscoreButtons");
 
 highscoreBtn.style.display = "none";
@@ -162,10 +163,6 @@ buttonFour.addEventListener("click", function (e) {
     }
 });
 
-// buttonSubmit.onclick = function() {
-//     card.style.display = "none"
-//     highscoreList.style.display = "contents";
-// }
 buttonSubmit.addEventListener("click", function (e) {
     e.preventDefault();
     var initialsText = highscoreInitials.value.trim();
@@ -183,11 +180,15 @@ buttonSubmit.addEventListener("click", function (e) {
     var initials = localStorage.getItem("initialsText");
     var totalScore = JSON.parse(localStorage.getItem("score"));
 
-    highscoreInitialList0.textContent = initials + ": " + totalScore + " points.";
-    localStorage.setItem("highscoreInitialList0", JSON.stringify(highscoreInitialList0.innerHTML));
-    var listItemOne = JSON.parse(localStorage.getItem("highscoreInitialList0"));
+    highscoreInitialList.textContent = initials + ": " + totalScore + " points.";
+    localStorage.setItem("highscoreInitialList", JSON.stringify(highscoreInitialList.innerHTML));
+    var listItemOne = JSON.parse(localStorage.getItem("highscoreInitialList"));
+});
 
-})
+buttonClearHighscore.addEventListener("click", function(e){
+    e.preventDefault
+    highscoreInitialList.innerHTML = "";
+});
 
 function highscoreCard() {
     card.style.display = "none"
