@@ -15,19 +15,22 @@ var linkHisgscore = document.getElementById("highscoreLink");
 var timerElement = document.getElementById("timerText");
 var resultText = document.getElementById("cardResult");
 var resultForm = document.getElementById("form");
+var navBar = document.getElementById("navBar");
 
 var highscoreInitials = document.getElementById("inputInitials");
 var highscoreList = document.querySelector(".list");
-var highscoreTotalscore = document.getElementById("span-index-0");
-var highscoreInitialList = document.getElementById("li-index-0")
 var highscoreBtn = document.getElementById("highscoreButtons");
+var highscoreHeader = document.getElementById("highscoreListHeader");
 
+highscoreHeader.style.display = "none";
 highscoreBtn.style.display = "none";
 highscoreList.style.display = "none";
 buttonSubmit.style.display = "none";
 answerCheck.style.display = "none";
 resultForm.style.display = "none";
 
+var initialArray = [];
+var li;
 
 var questions = [
     { q: "Commonly used data types DO NOT include", a: "alerts" },
@@ -166,35 +169,72 @@ buttonFour.addEventListener("click", function (e) {
 
 buttonSubmit.addEventListener("click", function (e) {
     e.preventDefault();
+
     var initialsText = highscoreInitials.value.trim();
     // localStorage.setItem("highscoreInitials".JSON.stringify(highscoreInitials.value));
     // e.stopImmediatePropagation();
+    localStorage.setItem("initialsText", JSON.stringify(initialsText));
+    var test = JSON.parse(localStorage.getItem("initialsText"));
+
+    var totalScore = JSON.parse(localStorage.getItem("score"));
+
+    initialArray.push(test + ": " + totalScore + " points");
+    console.log(initialArray);
+
     if (initialsText === "") {
         alert("Please enter your initials!");
         return;
     }
     if (highscoreInitials !== null) {
+        storeHighscore();
         highscoreCard();
     }
 
-    localStorage.setItem("initialsText", initialsText);
-    var initials = localStorage.getItem("initialsText");
-    var totalScore = JSON.parse(localStorage.getItem("score"));
-
-    highscoreInitialList.textContent = initials + ": " + totalScore + " points.";
-    localStorage.setItem("highscoreInitialList", JSON.stringify(highscoreInitialList.innerHTML));
-    var listItemOne = JSON.parse(localStorage.getItem("highscoreInitialList"));
 });
 
-buttonClearHighscore.addEventListener("click", function(e){
+buttonClearHighscore.addEventListener("click", function (e) {
     e.preventDefault
-    highscoreInitialList.innerHTML = "";
+    localStorage.clear();
+
+    var element = event.target;
+    if (element.matches("button") === true) {
+
+        var list = document.getElementById("myList");
+        while (list.hasChildNodes()) {
+            list.removeChild(list.firstChild);
+        }
+
+    }
+
 });
+
+function init() {
+    var storeHighscore = JSON.parse(localStorage.getItem("initialArray"));
+
+    if (storeHighscore !== null) {
+        initialArray = storeHighscore;
+    }
+}
+
+init();
+
+function storeHighscore() {
+    localStorage.setItem("initialArray", JSON.stringify(initialArray));
+}
 
 function highscoreCard() {
     card.style.display = "none"
+    highscoreHeader.style.display = "contents";
     highscoreList.style.display = "contents";
     highscoreBtn.style.display = "contents";
+
+    for (var i = 0; i < initialArray.length; i++) {
+        var listItem = initialArray[i];
+
+        li = document.createElement("li");
+        li.textContent = listItem;
+        highscoreList.appendChild(li);
+    }
 }
 
 function secondCard() {
@@ -248,9 +288,9 @@ function sixthCard() {
     resultForm.style.display = "contents"
     timerElement.innerHTML = "Time: 0";
     buttonSubmit.style.display = "contents"
+    navBar.style.visibility = "hidden";
 
     localStorage.setItem("score", JSON.stringify(score));
-    console.log(score);
 };
 
 (function () {
@@ -293,5 +333,3 @@ function sixthCard() {
     });
     startTimer();
 })();
-
-
