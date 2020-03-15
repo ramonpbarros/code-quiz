@@ -1,4 +1,4 @@
-var score = 0;
+var score = 25;
 
 var cardQuestion = document.querySelector(".card-title");
 var answerCheck = document.querySelector(".card-footer");
