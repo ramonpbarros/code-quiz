@@ -66,4 +66,12 @@ body {
         margin: auto;
         display: grid;      
     }
+    #buttonClear{
+        margin: auto;
+        display: grid;      
+    }
+    #buttonGoBack{
+        margin: auto;
+        display: grid;      
+    }
   }
