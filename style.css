@@ -72,6 +72,7 @@ body {
     }
     #buttonGoBack{
         margin: auto;
-        display: grid;      
+        display: grid;  
+        margin-bottom: 1em;    
     }
   }
