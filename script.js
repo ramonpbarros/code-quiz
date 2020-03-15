@@ -10,6 +10,7 @@ var buttonThree = document.getElementById("button-index-2");
 var buttonFour = document.getElementById("button-index-3");
 var buttonSubmit = document.getElementById("btnSubmit");
 var buttonClearHighscore = document.getElementById("buttonClear");
+var linkHisgscore = document.getElementById("highscoreLink");
 
 var timerElement = document.getElementById("timerText");
 var resultText = document.getElementById("cardResult");

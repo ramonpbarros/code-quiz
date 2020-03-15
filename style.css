@@ -46,3 +46,24 @@ body {
     display: inline-block;
 }
 
+@media screen and (max-width: 900px) {
+    #button-index-0{
+        margin: auto;
+        margin-bottom: 1em;
+        display: grid;      
+    }
+    #button-index-1{
+        margin: auto;
+        margin-bottom: 1em;
+        display: grid;        
+    }
+    #button-index-2{
+        margin: auto;
+        margin-bottom: 1em;
+        display: grid;
+    }
+    #button-index-3{
+        margin: auto;
+        display: grid;      
+    }
+  }
