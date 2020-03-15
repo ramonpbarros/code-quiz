@@ -28,11 +28,10 @@ This application runs in the browser. Nothing needs to be installed except for y
 * Repository can be found here: [GitHub/ramonpbarros](https://github.com/ramonpbarros/code-quiz) Make sure to git clone repository and check out the code!
 
 ## Code Examples
-Show examples of usage:
 `localStorage.setItem("initialsText", JSON.stringify(initialsText)); var test = JSON.parse(localStorage.getItem("initialsText"));`
 
 ## Features
-List of features ready and TODOs for future development
+List of features:
 * Click the start button  and a timer starts!
 * Wrong answer will penalize user with 5 points and 10 seonds!
 * When game is over user can save his initials and score!
