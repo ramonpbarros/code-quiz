@@ -21,8 +21,9 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#" id="highscoreLink">View Highscore <span
-                            class="sr-only">(current)</span></a>
+                        <!-- <a class="nav-link" href="#" id="highscoreLink">View Highscore <span
+                            class="sr-only">(current)</span></a> -->
+                        <button class="btn btn-primary" id="highscoreBtn">View Highscore</button>
                     </li>
                 </ul>
                 <span class="navbar-text">
@@ -45,7 +46,13 @@
         </div>
 
     </div>
+    <script>
+        var buttonHighscore = document.getElementById("highscoreBtn");
 
+        buttonHighscore.addEventListener("click", function () {
+            alert("START QUIZ to be able to see highscores");
+        })
+    </script>
 </body>
 
 </html>

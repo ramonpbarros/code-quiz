@@ -10,7 +10,7 @@ var buttonThree = document.getElementById("button-index-2");
 var buttonFour = document.getElementById("button-index-3");
 var buttonSubmit = document.getElementById("btnSubmit");
 var buttonClearHighscore = document.getElementById("buttonClear");
-var linkHisgscore = document.getElementById("highscoreLink");
+var buttonHighscore = document.getElementById("highscoreBtn");
 
 var timerElement = document.getElementById("timerText");
 var resultText = document.getElementById("cardResult");
@@ -166,6 +166,10 @@ buttonFour.addEventListener("click", function (e) {
         sixthCard();
     }
 });
+
+buttonHighscore.addEventListener("click", function() {
+    alert("HIGHSCORE --> " + initialArray.join(" , "));
+})
 
 buttonSubmit.addEventListener("click", function (e) {
     e.preventDefault();
