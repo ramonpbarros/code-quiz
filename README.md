@@ -38,6 +38,8 @@ List of features:
 
 To-do list:
 * Design needs improvement.
+* Add different subjects.
+* Add more questions.
 
 ## Status
 Project is: _in progress_
